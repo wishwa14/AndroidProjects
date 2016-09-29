@@ -33,15 +33,13 @@ public class MainActivity extends AppCompatActivity {
             dialogBox("Username and Password Empty");
         }
 
-        else if(username.isEmpty()){
+        else if(username.isEmpty() || password.isEmpty() ){
+            etUsername.setText("");
+            etPassword.setText("");
             error = true;
-            dialogBox("Username is Empty");
+            dialogBox("Invalid Login");
         }
 
-        else if (password.isEmpty()){
-            error = true;
-            dialogBox("Password is Empty");
-        }
         if(!error){
             validateUser(username,password);
         }
